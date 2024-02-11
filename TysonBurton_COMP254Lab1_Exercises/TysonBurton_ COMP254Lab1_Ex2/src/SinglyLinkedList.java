@@ -108,7 +108,6 @@ public class SinglyLinkedList {
         //Were Checking if both nodes are found (i.e not null)
         if (node1 != null && node2 != null) {
 
-
             //Were going to store node1 data in temp
             int temp = node1.getData();
 

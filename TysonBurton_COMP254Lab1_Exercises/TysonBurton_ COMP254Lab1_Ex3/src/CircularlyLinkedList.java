@@ -157,8 +157,10 @@ public class CircularlyLinkedList {
 
             // Cloning the head of the orignal list
             Node clonedHead = new Node(originalCurrent.getData());
+
             //Setting the head of the cloned list to the clonedHead
             clonedList.setHead(clonedHead);
+
             //Set the clonedTail = to the cloned Head
             Node clonedTail = clonedHead;
 
@@ -181,7 +183,7 @@ public class CircularlyLinkedList {
             //link the clonedTail to the clonedHead of the list
             clonedTail.setNext(clonedHead);
 
-            //Set the size of the cloned list
+            //Set the size of the cloned list to the size of the original list
             clonedList.size = this.size;
         }
 
