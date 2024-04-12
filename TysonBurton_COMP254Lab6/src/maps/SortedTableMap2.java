@@ -14,18 +14,18 @@ import java.util.Comparator;
  * @author Roberto Tamassia
  * @author Michael H. Goldwasser
  */
-public class SortedTableMap<K,V> extends AbstractSortedMap<K,V> {
+public class SortedTableMap2<K,V> extends AbstractSortedMap<K,V> {
 
     private ArrayList<MapEntry<K,V>> table = new ArrayList<>();
 
     /** Constructs an empty map using the natural ordering of keys. */
-    public SortedTableMap() { super(); }
+    public SortedTableMap2() { super(); }
 
     /**
      * Constructs an empty map using the given comparator to order keys.
      * @param comp comparator defining the order of keys in the map
      */
-    public SortedTableMap(Comparator<K> comp) { super(comp); }
+    public SortedTableMap2(Comparator<K> comp) { super(comp); }
 
     // variant of binary search that returns relevant index
     /**
@@ -63,16 +63,18 @@ public class SortedTableMap<K,V> extends AbstractSortedMap<K,V> {
 
     //==============================================================================
     //Updated Method
-    public boolean containKey(K key) {
+    public boolean containKey(K key)
+    {
         // Use findIndex method to check for the key in the map
         int index = findIndex(key);
 
-        // If the index is within the bounds of the table and the key matches,
-        // then the key exists in the map
+        // If the index is within the table and the key matches,
         boolean keyExistsInMap = index >= 0 && index < table.size();
-        boolean keyMatches = keyExistsInMap && compare(key, table.get(index)) == 0;
 
-        return keyMatches;
+        // then the key and value match
+        boolean keyMatch = keyExistsInMap ? compare(key, table.get(index)) == 0 : false;
+
+        return keyMatch;
     }
     //==============================================================================
 

@@ -3,20 +3,22 @@ package maps;
 
 import java.util.ArrayList;
 
-public class ProbeHashMap<K,V> extends AbstractHashMap<K,V> {
+public class ProbeHashMap1<K,V> extends AbstractHashMap<K,V> {
     private MapEntry<K, V>[] table;
-    private MapEntry<K, V> DEFUNCT = new MapEntry<>(null, null); // sentinel
+
+    // sentinel
+    private MapEntry<K, V> DEFUNCT = new MapEntry<>(null, null);
 
     // New constructors to allow setting maximum load factor
-    public ProbeHashMap(double maxLoad) {
+    public ProbeHashMap1(double maxLoad) {
         super(maxLoad);
     }
 
-    public ProbeHashMap(double maxLoad, int cap) {
+    public ProbeHashMap1(double maxLoad, int cap) {
         super(maxLoad, cap);
     }
 
-    public ProbeHashMap(double maxLoad, int cap, int p) {
+    public ProbeHashMap1(double maxLoad, int cap, int p) {
         super(maxLoad, cap, p);
     }
 

@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 public class Exercise3 {
 //Runtime O(n)
+
+    //Always make sure the smallest element is at the top
     public static class HeapPriorityQueue<T extends Comparable<T>>
     {
         private ArrayList<T> heap;

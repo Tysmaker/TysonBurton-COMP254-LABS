@@ -3,7 +3,7 @@ package maps;
 public class OutputExercise2
 {
     public static void main(String[] args) {
-        SortedTableMap<Integer, String> map = new SortedTableMap<>();
+        SortedTableMap2<Integer, String> map = new SortedTableMap2<>();
 
         // Insert some key-value pairs
         map.put(1, "One");

@@ -7,6 +7,8 @@ public class Exercise2 extends Exercise1 {
     {
 
         // Function to compute and print the elements and height of each of the subtree
+
+        //Recurs left in the subtree then right in the subtree till it reaches its base case
         public static int printElementAndHeight(TreeNode root)
         {
             // Base case: empty subtree has height -1

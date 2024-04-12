@@ -1,6 +1,7 @@
 public class Exercise1 {
 
-    //O(n) Runtime
+    //If the right node P is not null iteratate through the left side of the subtree rooted at the right of child P
+    // to find the left most node
 
     public static class TreeNode
     {
@@ -45,6 +46,7 @@ public class Exercise1 {
                 return successor;
             }
         }
+        //=================================================================
 
         // Method to find the leftmost node in a subtree rooted at node
         private TreeNode findLeftmost(TreeNode node)
@@ -55,7 +57,9 @@ public class Exercise1 {
             }
             return node;
         }
+        //=================================================================
     }
+
 
     // Main Method
     public static void main(String[] args)

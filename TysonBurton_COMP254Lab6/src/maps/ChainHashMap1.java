@@ -3,19 +3,19 @@ package maps;
 
 import java.util.ArrayList;
 
-public class ChainHashMap<K,V> extends AbstractHashMap<K,V> {
-    private UnsortedTableMap<K,V>[] table;   // initialized within createTable
+public class ChainHashMap1<K,V> extends AbstractHashMap<K,V> {
+    private UnsortedTableMap<K,V>[] table;
 
     // New constructor to allow setting maximum load factor
-    public ChainHashMap(double maxLoad) {
+    public ChainHashMap1(double maxLoad) {
         super(maxLoad);
     }
 
-    public ChainHashMap(double maxLoad, int cap) {
+    public ChainHashMap1(double maxLoad, int cap) {
         super(maxLoad, cap);
     }
 
-    public ChainHashMap(double maxLoad, int cap, int p) {
+    public ChainHashMap1(double maxLoad, int cap, int p) {
         super(maxLoad, cap, p);
     }
 
@@ -26,14 +26,16 @@ public class ChainHashMap<K,V> extends AbstractHashMap<K,V> {
     }
 
     @Override
-    protected V bucketGet(int h, K k) {
+    protected V bucketGet(int h, K k)
+    {
         UnsortedTableMap<K,V> bucket = table[h];
         if (bucket == null) return null;
         return bucket.get(k);
     }
 
     @Override
-    protected V bucketPut(int h, K k, V v) {
+    protected V bucketPut(int h, K k, V v)
+    {
         UnsortedTableMap<K,V> bucket = table[h];
         if (bucket == null)
             bucket = table[h] = new UnsortedTableMap<>();
@@ -44,7 +46,8 @@ public class ChainHashMap<K,V> extends AbstractHashMap<K,V> {
     }
 
     @Override
-    protected V bucketRemove(int h, K k) {
+    protected V bucketRemove(int h, K k)
+    {
         UnsortedTableMap<K,V> bucket = table[h];
         if (bucket == null) return null;
         int oldSize = bucket.size();
@@ -54,7 +57,8 @@ public class ChainHashMap<K,V> extends AbstractHashMap<K,V> {
     }
 
     @Override
-    public Iterable<Entry<K,V>> entrySet() {
+    public Iterable<Entry<K,V>> entrySet()
+    {
         ArrayList<Entry<K,V>> buffer = new ArrayList<>();
         for (int h=0; h < capacity; h++)
             if (table[h] != null)

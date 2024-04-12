@@ -9,7 +9,7 @@ public class OutputExercise1 {
         System.out.println("============================================");
 
         // Creating ChainHashMap with a maximum load factor of 0.7
-        ChainHashMap<Integer, String> chainHashMap = new ChainHashMap<>(0.7);
+        ChainHashMap1<Integer, String> chainHashMap = new ChainHashMap1<>(0.7);
 
         // Adding elements to ChainHashMap
         chainHashMap.put(1, "One");
@@ -30,7 +30,7 @@ public class OutputExercise1 {
         System.out.println("============================================");
 
         // Creating ProbeHashMap with a maximum load factor of 0.7
-        ProbeHashMap<Integer, String> probeHashMap = new ProbeHashMap<>(0.7);
+        ProbeHashMap1<Integer, String> probeHashMap = new ProbeHashMap1<>(0.7);
 
         // Adding elements to ProbeHashMap
         probeHashMap.put(10, "Ten");
